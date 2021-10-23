@@ -1,0 +1,38 @@
+{
+    "name": "brainshield-devfest-backend",
+    "version": "1.0.0",
+    "description": "[DevFest 2021] Repo serves for backend of brainshield application. A project using blockchain and nodejs for software's copyright protection purpose.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node ./src/app.js",
+        "dev": "nodemon ./src/app.js -e js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/derektruong/brainshield-devfest-backend.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "chalk": "^4.1.2",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "google-auth-library": "^7.10.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongodb": "^4.1.2",
+        "mongoose": "^6.0.9",
+        "multer": "^1.4.3",
+        "validator": "^13.6.0"
+    },
+    "devDependencies": {
+        "eslint": "^7.32.0",
+        "nodemon": "^2.0.13"
+    },
+    "bugs": {
+        "url": "https://github.com/derektruong/brainshield-devfest-backend/issues"
+    },
+    "homepage": "https://github.com/derektruong/brainshield-devfest-backend#readme"
+}
