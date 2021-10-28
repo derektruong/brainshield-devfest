@@ -1,0 +1,74 @@
+@import "./Variables.scss";
+
+$t: 1s;
+$d: 0.08em;
+$n: 3;
+$e: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .home-title{
+    font-family: Futura, sans-serif;
+    font-weight: 900;
+    font-size: 80px;
+    margin: 8rem auto 4rem;
+  
+    @keyframes ani{
+      0%{
+        transform: translate3d(0,0,0);
+        text-shadow: 0em 0em 0 $jungle-mist;
+        color: black;
+      }
+
+      30%{
+        transform: translate3d(0,0,0);
+        text-shadow: 0em 0em 0 $jungle-mist;
+        color: black;
+      }
+
+      70%{
+        transform: translate3d($d,-$d,0);
+        text-shadow: -$d $d $jungle-mist;
+        color: black;
+      }
+
+      100%{
+        transform: translate3d($d,-$d,0);
+        text-shadow: -$d $d $jungle-mist;
+        color: black;
+      }
+    }
+
+    span{
+      position: relative;
+      display: inline-block;
+      animation: ani $t infinite alternate $e;
+      @for $i from 1 through $n{
+        &:nth-last-child(#{$i}n){ animation-delay: -$t*$i/$n/2;}
+      }
+    }
+  }
+
+  .home-content {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .home-content-left {
+      width: 70%;
+      font-size: 1.5rem;
+      text-align: right;
+      margin-right: 1rem;
+    }
+
+    .home-content-right {
+      width: 30%;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}

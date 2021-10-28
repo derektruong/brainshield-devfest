@@ -1,0 +1,22 @@
+@import "./Variables.scss";
+
+.ant-list-item {
+  flex-direction: row-reverse !important;
+
+  .ant-list-item-meta {
+    width: 100%;
+    margin-left: 20px;
+
+    .ant-list-item-meta-title {
+      color: $fiord;
+    }
+
+    .ant-list-item-meta-description {
+      color: $lynch;
+    }
+  }
+}
+
+.ant-modal-footer {
+  display: none;
+}

@@ -1,0 +1,23 @@
+@import "./Variables.scss";
+
+.ant-card {
+  width: 300px !important;
+  height: fit-content !important;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
+
+  .ant-card-meta-title {
+    color: $fiord !important;
+  }
+
+  .ant-card-meta-description {
+    color: $gothic !important;
+  }
+
+  .ant-card-actions li span .anticon:hover {
+    color: $fiord !important;
+  }
+}

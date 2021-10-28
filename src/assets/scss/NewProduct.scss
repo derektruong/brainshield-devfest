@@ -1,0 +1,18 @@
+@import "./Variables.scss";
+
+.ant-form {
+  color: $fiord !important;
+  margin: 2rem 20rem !important;
+  
+  .ant-input:hover,
+  .ant-select-selector:hover,
+  .ant-select-selector:focus,
+  .ant-select-selector:active {
+    border-color: $fiord !important;
+  }
+
+  .ant-btn-primary {
+    background-color: $fiord !important;
+    border-color: $fiord !important;
+  }
+}

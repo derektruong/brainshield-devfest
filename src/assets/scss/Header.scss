@@ -1,0 +1,133 @@
+@import "./Variables.scss";
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 2rem 10rem;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      width: 4rem;
+      margin-right: 0.5rem;
+    }
+
+    .brainshield {
+      color: $fiord;
+      font-size: 2rem;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: $lynch;
+      }
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+
+    .button {
+      margin-right: 0.5rem;
+  
+      &:hover,
+      &:focus {
+        color: $fiord;
+        border-color: $fiord;
+      }
+    }
+
+    .account-button {
+      cursor: pointer;
+
+      .ant-card {
+        width: 200px !important;
+      }
+    }
+
+    .account-container {
+      border-color: $fiord;
+    }
+    
+    .ant-card-body {
+      display: flex;
+      align-items: center;
+
+      .css-f5n5mq {
+        margin-right: 0.5rem;
+      }
+    }
+  
+    .metamask {
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+  
+      img {
+        width: 2rem;
+      }
+    }
+  }
+}
+
+.modal-container {
+  color: $fiord;
+
+  .modal-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .modal-content {
+    display: flex;
+    align-items: center;
+    border: 1px solid $fiord;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin: 1rem auto;
+  }
+  
+  .modal-button {
+    display: flex;
+    flex-direction: column;
+
+    .button {
+      width: 100%;
+    }
+
+    a {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .modal-bottom {
+    background-color: $lynch;
+    color: $jungle-mist;
+    border: 1px solid $fiord;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .button {
+    &:hover,
+    &:focus {
+      color: $fiord;
+      border-color: $fiord;
+    }
+  }
+}
+
+.account {
+  margin-left: 0.5rem;
+  margin-right: 4rem;
+}

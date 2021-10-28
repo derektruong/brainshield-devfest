@@ -1,0 +1,14 @@
+@import "./Variables.scss";
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 10rem;
+}
+
+.ant-card-meta-description {
+	white-space: nowrap !important;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+
+}
