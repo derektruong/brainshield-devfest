@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useEthers, useSendTransaction } from "@usedapp/core";
 import { useAssetsCall, useContractMethod } from "../../hooks/index";
 import "../../assets/scss/ExploreProducts.scss";
-import { Card, Avatar, Modal, Form, Input, Tooltip, Image } from "antd";
-import { HeartTwoTone, CoffeeOutlined, EyeOutlined } from "@ant-design/icons";
+import { Card, Avatar, Modal, Form, Input, Tooltip} from "antd";
+import { HeartTwoTone, CoffeeOutlined } from "@ant-design/icons";
 import { utils } from "ethers";
 import DetailProduct from "./DetailProduct";
 
@@ -104,15 +104,23 @@ const CartProduct = (props) => {
                 key={id}
                 style={{ width: 300, margin: "10px" }}
                 cover={
-                    <Image
-                        alt="example"
-                        src={`https://ipfs.infura.io/ipfs/${ipfsHash}`}
-                        style={{
-                            width: "100%",
-                            height: "200px",
-                            objectFit: "cover",
-                        }}
-                    />
+                    <Tooltip
+                        placement="top"
+                        title={"Nhấn vào để xem chi tiết"}
+						arrowPointAtCenter
+                    >
+                        <img
+                            alt="example"
+                            src={`https://ipfs.infura.io/ipfs/${ipfsHash}`}
+                            style={{
+                                width: "100%",
+                                height: "200px",
+                                objectFit: "cover",
+								cursor: "pointer"
+                            }}
+                            onClick={showDetailHandler}
+                        />
+                    </Tooltip>
                 }
                 actions={[
                     <span onClick={clickVoteHandler}>
@@ -130,11 +138,6 @@ const CartProduct = (props) => {
                             title={"Donate cho sản phẩm này"}
                         >
                             <CoffeeOutlined key="coffee" />
-                        </Tooltip>
-                    </span>,
-                    <span onClick={showDetailHandler}>
-                        <Tooltip placement="topLeft" title={"Xem chi tiết"}>
-                            <EyeOutlined key="eye" />
                         </Tooltip>
                     </span>,
                 ]}
