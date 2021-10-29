@@ -1,13 +1,13 @@
 import React from "react";
 import "../../assets/scss/DetailProduct.scss"
-import { List, Avatar } from 'antd';
+import { List, Avatar, Image } from 'antd';
 
 const DetailProduct = (props) => {
     return (
         <List.Item
             key={props.key}
             extra={
-                <img
+                <Image
                     width={350}
                     alt="product"
                     src={`https://ipfs.infura.io/ipfs/${props.ipfsHash}`}

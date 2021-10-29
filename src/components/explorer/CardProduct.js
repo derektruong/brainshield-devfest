@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useEthers, useSendTransaction } from "@usedapp/core";
 import { useAssetsCall, useContractMethod } from "../../hooks/index";
 import "../../assets/scss/ExploreProducts.scss";
-import { Card, Avatar, Modal, Form, Input } from "antd";
-import { HeartTwoTone, CoffeeOutlined } from "@ant-design/icons";
+import { Card, Avatar, Modal, Form, Input, Tooltip, Image } from "antd";
+import { HeartTwoTone, CoffeeOutlined, EyeOutlined } from "@ant-design/icons";
 import { utils } from "ethers";
 import DetailProduct from "./DetailProduct";
 
@@ -92,14 +92,19 @@ const CartProduct = (props) => {
                 button="false"
                 onCancel={handleDetailCancel}
             >
-                <DetailProduct key={id} ipfsHash={ipfsHash} name={name} description={description} />
+                <DetailProduct
+                    key={id}
+                    ipfsHash={ipfsHash}
+                    name={name}
+                    description={description}
+                />
             </Modal>
 
             <Card
                 key={id}
                 style={{ width: 300, margin: "10px" }}
                 cover={
-                    <img
+                    <Image
                         alt="example"
                         src={`https://ipfs.infura.io/ipfs/${ipfsHash}`}
                         style={{
@@ -111,14 +116,28 @@ const CartProduct = (props) => {
                 }
                 actions={[
                     <span onClick={clickVoteHandler}>
-                        <HeartTwoTone twoToneColor="#eb2f96" key="heart" />{" "}
-                        <span>{vote ? vote.toNumber() : 0}</span>
+                        <Tooltip
+                            placement="topLeft"
+                            title={"Yêu thích sản phẩm này"}
+                        >
+                            <HeartTwoTone twoToneColor="#eb2f96" key="heart" />{" "}
+                            <span>{vote ? vote.toNumber() : 0}</span>
+                        </Tooltip>
                     </span>,
                     <span onClick={clickDonateHandler}>
-                        <CoffeeOutlined key="coffee" />
+                        <Tooltip
+                            placement="topLeft"
+                            title={"Donate cho sản phẩm này"}
+                        >
+                            <CoffeeOutlined key="coffee" />
+                        </Tooltip>
+                    </span>,
+                    <span onClick={showDetailHandler}>
+                        <Tooltip placement="topLeft" title={"Xem chi tiết"}>
+                            <EyeOutlined key="eye" />
+                        </Tooltip>
                     </span>,
                 ]}
-                onClick={showDetailHandler}
             >
                 <Meta
                     avatar={
